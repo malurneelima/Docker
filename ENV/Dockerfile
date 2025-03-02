@@ -1,4 +1,4 @@
 FROM almalinux:9
 ENV name="Neelima" \
     husband="Pradeep"
-CMD ["sleep", "100;"]
+CMD ["sleep", "100"]
