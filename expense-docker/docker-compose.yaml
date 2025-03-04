@@ -1,0 +1,23 @@
+version: "3"
+networks:
+  expense:
+volumes:
+  mysql: # This is similar to docker volume create mysql
+services:
+  mysql:
+    image: neelimamalur/shivamysql:v1
+    container_name: mysql # similar to --name mysql
+    volumes:
+      -mysql:/var/lib/mysql # similar to -v mysql:/var/lib/mysql
+  backend:
+    image: neelimamalur/shivabackend:v1
+    container_name: backend
+    depends_on:
+      - mysql
+  frontend:
+    image: neelimamalur/shivafrontend:v1
+    container_name: frontend
+    ports:
+      -80:80
+    depends_on:
+      - backend
