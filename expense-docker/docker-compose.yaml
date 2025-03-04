@@ -18,6 +18,6 @@ services:
     image: neelimamalur/shivafrontend:v1
     container_name: frontend
     ports:
-      -80:80
+      - 80:80
     depends_on:
       - backend
